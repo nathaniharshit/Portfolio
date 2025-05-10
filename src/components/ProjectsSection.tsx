@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -17,7 +16,7 @@ const projects: Project[] = [
     id: 1,
     title: "Carbmit",
     description: "Developing Carbmit — a web platform that estimates carbon emissions from coal mining and guides operations toward carbon neutrality.",
-    image: "carbmit.jpg",
+    image: "https://i.pinimg.com/736x/7e/c6/ab/7ec6ab336c410b9d82f44e87437781cf.jpg",
     tags: ["React", "Node.js", "MongoDB", "Vite"],
     link: "https://carb-mit-final.vercel.app"
   },
@@ -25,7 +24,7 @@ const projects: Project[] = [
     id: 2,
     title: "Jobify",
     description: "A website that helps the user if he/she is an employee to find job or if he/she is a company owner so he/she can hire employee.",
-    image: "jobify.png",
+    image: "https://i.pinimg.com/736x/5a/6d/16/5a6d16fff38e19181da7bec6c19ccfad.jpg",
     tags: ["React", "Node.js", "MongoDB", "Vite","Tail-Wind CSS"],
     link: "https://jobify-gold-five.vercel.app"
   },
@@ -33,7 +32,7 @@ const projects: Project[] = [
     id: 3,
     title: "EmployManage",
     description: "A website that helps company or an organisation to manage the employees that are working in the company.",
-    image: "employmanage.jpg",
+    image: "https://i.pinimg.com/736x/4b/6d/45/4b6d45b39f5a2245e288e4075fec71b4.jpg",
     tags: ["React", "Node.js", "MongoDB", "Vite","Tail-Wind CSS"],
     link: "https://employ-manage.vercel.app"
   },
