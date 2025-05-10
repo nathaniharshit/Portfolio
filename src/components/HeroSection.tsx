@@ -1,102 +1,90 @@
+
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
-type Project = {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  link: string;
-};
+const HeroSection = () => {
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-const projects: Project[] = [
-  {
-    id: 1,
-    title: "Carbmit",
-    description: "Developing Carbmit — a web platform that estimates carbon emissions from coal mining and guides operations toward carbon neutrality.",
-    image: "https://i.pinimg.com/736x/7e/c6/ab/7ec6ab336c410b9d82f44e87437781cf.jpg",
-    tags: ["React", "Node.js", "MongoDB", "Vite"],
-    link: "https://carb-mit-final.vercel.app"
-  },
-  {
-    id: 2,
-    title: "Jobify",
-    description: "A website that helps the user if he/she is an employee to find job or if he/she is a company owner so he/she can hire employee.",
-    image: "https://i.pinimg.com/736x/5a/6d/16/5a6d16fff38e19181da7bec6c19ccfad.jpg",
-    tags: ["React", "Node.js", "MongoDB", "Vite","Tail-Wind CSS"],
-    link: "https://jobify-gold-five.vercel.app"
-  },
-  {
-    id: 3,
-    title: "EmployManage",
-    description: "A website that helps company or an organisation to manage the employees that are working in the company.",
-    image: "https://i.pinimg.com/736x/4b/6d/45/4b6d45b39f5a2245e288e4075fec71b4.jpg",
-    tags: ["React", "Node.js", "MongoDB", "Vite","Tail-Wind CSS"],
-    link: "https://employ-manage.vercel.app"
-  },
-];
-
-const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-20 section-padding">
+    <section id="hero" className="min-h-screen flex items-center pt-20 pb-16 px-4 md:px-8 section-padding">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and experience.
-            Each project is briefly described with links to code repositories and live demos.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {projects.map((project) => (
-            <div key={project.id} className="group portfolio-item animate-fade-in" style={{animationDelay: `${project.id * 0.1}s`}}>
-              <Card className="h-full overflow-hidden hover:shadow-lg transition-all">
-                <div className="h-56 overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-secondary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    {project.description}
-                  </p>
-                  <div className="mb-4 flex flex-wrap gap-2">
-                    {project.tags.map((tag, index) => (
-                      <span 
-                        key={index} 
-                        className="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <Button asChild className="w-full bg-primary/90 hover:bg-primary">
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">
-                      View Project
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <div className="flex flex-col order-2 md:order-1 animate-fade-in">
+            <div className="mb-4">
+              <span className="text-lg md:text-xl inline-block py-1 px-3 rounded-full bg-secondary/10 text-secondary mb-6">
+                👋 Welcome to my portfolio
+              </span>
             </div>
-          ))}
-        </div>
-        
-        <div className="text-center mt-12">
-          <Button variant="outline" className="px-8">
-            View All Projects
-          </Button>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              I'm <span className="text-secondary">Harshit Nathani</span>, <br/>
+              <span className="text-primary">Creative Developer</span>
+            </h1>
+            <p className="text-lg text-muted-foreground mb-8 md:pr-10">
+              I build exceptional digital experiences that are beautiful, 
+              functional, and user-centered. Passionate about crafting clean code
+              and stunning interfaces.
+            </p>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4">
+              <Button onClick={scrollToProjects} className="bg-secondary hover:bg-secondary/80 text-white px-8 py-6">
+                View My Work
+              </Button>
+              <Button variant="outline" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-6">
+                Contact Me
+              </Button>
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" className="px-8 py-6">
+                View Resume
+              </Button>
+            </a>
+</div>
+
+            <div className="mt-12 flex items-center gap-6">
+              <a href="https://github.com/nathaniharshit" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-secondary transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/harshit-nathani-79a2b6334/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-secondary transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/nathaniharshit" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-secondary transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div className="relative flex justify-center">
+              <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden border-4 border-secondary/30 shadow-xl">
+                <img 
+                  src="https://i.pinimg.com/736x/f8/a4/10/f8a410a7d2ecc0c0b12b055b0aa16f1b.jpg" 
+                  alt="Developer" 
+                  className="w-full h-full object-cover" 
+                />
+          </div>
+              <div className="absolute -bottom-1 -right-6 bg-background p-4 rounded-xl shadow-lg">
+                <div className="flex items-center gap-4 px-2 py-1">
+                  <span className="flex h-3 w-3 bg-green-500 rounded-full"></span>
+                  <span className="text-sm font-medium">Available for work</span>
+                </div>
+              </div>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default ProjectsSection;
+export default HeroSection;
