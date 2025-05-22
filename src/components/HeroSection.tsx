@@ -37,7 +37,7 @@ const HeroSection = () => {
               <Button variant="outline" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-6">
                 Contact Me
               </Button>
-                <a href="https://drive.google.com/file/d/1Ws2wTd83owRWSSmsxB1QruCXPuWrzlkS/view" target="_blank" rel="noopener noreferrer">
+                <a href="https://drive.google.com/file/d/1tDPdY4OgBkdiRyra9LvcszFFX7JwFnrw/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="px-8 py-6">
                 View Resume
               </Button>
